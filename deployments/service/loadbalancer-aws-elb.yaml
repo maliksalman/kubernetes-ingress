@@ -4,6 +4,8 @@ metadata:
   name: nginx-ingress
   namespace: nginx-ingress
   annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    service.beta.kubernetes.io/aws-load-balancer-subnets: public-1, public-2, public-3
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
     service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
 spec:
